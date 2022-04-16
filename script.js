@@ -3,6 +3,7 @@ let seconds = 0;
 let minutes = 0;
 let hours = 0;
 
+
 // define vars to hold display values
 let displaySeconds= 0;
 let displayMinutes = 0;
@@ -64,7 +65,7 @@ function startStop(){
 
 	if(status === "stopped") {
 		//start stopwatch
-		interval = window.setInterval(timer, 1000);
+		interval = window.setInterval(timer, 1);
 		document.getElementById("startStopIcon").src = "icons/pause.png"
 		status = "started"
 	} else {
@@ -75,6 +76,17 @@ function startStop(){
 }
 
 function reset() {
+	let recordedTime = (hours*60 + minutes + seconds/60);
+	function returnRecordedTime() {
+		console.log(recordedTime);
+		return recordedTime;
+	}
+	if(recordedTime === 0) {
+		document.getElementById("myTime").innerHTML = "My Time: ";
+	} else {
+		document.getElementById("myTime").innerHTML = "My Time: " + recordedTime;
+	}
+
 	window.clearInterval(interval);
 	seconds = 0;
 	minutes = 0;
@@ -82,5 +94,5 @@ function reset() {
 	document.getElementById("display").innerHTML = "00:00:00";
 	document.getElementById("startStopIcon").src = "icons/play.png";
 	status = "stopped";
-
 }
+

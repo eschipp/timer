@@ -1,0 +1,29 @@
+* {
+	color: green;
+	text-align: center;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+button {
+  background: transparent;
+  padding: 0;
+  border: none;
+  margin: 0;
+  outline: none;
+}
+.timer {
+	font-size: 60px;
+	padding:  20px;
+}
+
+.circle {
+	display: inline-flex;
+	border: 2px solid blue;
+	border-radius: 50%;
+	height: 270px;
+	width: 270px;
+	align-items: center;
+}

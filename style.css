@@ -14,6 +14,11 @@ button {
   margin: 0;
   outline: none;
 }
+
+.container {
+	height: 300px;
+	width: 100%;
+}
 .timer {
 	font-size: 60px;
 	padding:  20px;
@@ -26,4 +31,11 @@ button {
 	height: 270px;
 	width: 270px;
 	align-items: center;
+}
+
+#display{
+	width: 100%;
+	font-size:  72px;
+	text-align: center;
+	margin:  0px auto;
 }

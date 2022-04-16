@@ -20,23 +20,21 @@
 		</div>
 	</div>
 	
-	<div class="timer">
-		<span>00:00:00</span>
+	<div class="container">
+		<div id="display">
+			00:00:00
+		</div>
+
+		<div class="buttons">
+			<button id = "startStop" onclick = "startStop()">
+				<img src="icons/play.png" id="startStopIcon" />
+			</button>
+			<button id = "reset" onclick="reset()">
+				<img src="icons/stop.png" id="resetIcon" />
+			</button>
+		</div>
+		
 	</div>
-
-
-
-	<button>
-		<img src="icons/play.png" />
-		<img src="icons/pause.png" />
-	</button>
-	<button>
-		<img src="icons/stop.png" />
-	</button>
-	
-
-
-
 
 	<script src="script.js"></script>
 </body>

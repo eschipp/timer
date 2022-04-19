@@ -65,7 +65,7 @@ function startStop(){
 
 	if(status === "stopped") {
 		//start stopwatch
-		interval = window.setInterval(timer, 1);
+		interval = window.setInterval(timer, 1000);
 		document.getElementById("startStopIcon").src = "icons/pause.png"
 		status = "started"
 	} else {
@@ -76,15 +76,16 @@ function startStop(){
 }
 
 function reset() {
-	let recordedTime = (hours*60 + minutes + seconds/60);
+	let recordedTime = (hours*60 + minutes + seconds/60).toFixed(2);
 	function returnRecordedTime() {
-		console.log(recordedTime);
 		return recordedTime;
 	}
 	if(recordedTime === 0) {
-		document.getElementById("myTime").innerHTML = "My Time: ";
+		document.getElementById("myTime").innerHTML = "My Time Today: ";
+		document.getElementById("tableTime").innerHTML = "0 minutes"
 	} else {
-		document.getElementById("myTime").innerHTML = "My Time: " + recordedTime;
+		document.getElementById("myTime").innerHTML = "My Time Today: " + recordedTime;
+		document.getElementById("tableTime").innerHTML = recordedTime + " minutes";
 	}
 
 	window.clearInterval(interval);

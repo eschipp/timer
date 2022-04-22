@@ -81,11 +81,11 @@ function reset() {
 		return recordedTime;
 	}
 	if(recordedTime === 0) {
-		document.getElementById("myTime").innerHTML = "My Time Today: ";
-		document.getElementById("tableTime").innerHTML = "0 minutes"
+		
+		document.getElementById("recordedTime").innerHTML = "0 minutes"
 	} else {
-		document.getElementById("myTime").innerHTML = "My Time Today: " + recordedTime;
-		document.getElementById("tableTime").innerHTML = recordedTime + " minutes";
+		
+		document.getElementById("recordedTime").innerHTML = recordedTime + " minutes";
 	}
 
 	window.clearInterval(interval);

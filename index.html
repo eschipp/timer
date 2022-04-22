@@ -7,7 +7,11 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+	<div class="nav">
+		<button>Sign Out</button>
+	</div>
 
+	<!-- top goals -->
 	<div class="goals">
 		<div class="circle">
 			<h1> X/X Daily Streak! </h1>
@@ -19,13 +23,13 @@
 			<h1> X/X Weekly Goal Streak! </h1>
 		</div>
 	</div>
-	
+
+	<!-- clock -->
 	<div class="clockContainer">
 		<div id="display">
 			00:00:00
 		</div>
-
-		<div class="buttons">
+		<div class="timerButtons">
 			<button id = "startStop" onclick = "startStop()">
 				<img src="icons/play.png" id="startStopIcon" />
 			</button>
@@ -35,20 +39,25 @@
 		</div>
 		
 	</div>
-	<div id="myTime">
-		My Time Today:
+	
+	<!-- submit time/date -->
+	<div id="submit">
+		<div id="inputDate">
+			<label>
+				<input type="date" name="date">
+			</label>
+		</div>
+		<div id="recordedTime">
+			0 minutes
+		</div>	
+		<button class="submitButton">Submit Time!</button>
 	</div>
 
+	<!-- table -->
 	<div>
 		<table>
-			<tr>
-				<th>Date</th>
-				<th>Time Recorded</th>
-			</tr>
-			<tr>
-				<td>Monday, April 18, 2022</td>
-				<td id="tableTime"> 0 minutes</td>
-			</tr>
+			<th>Date submitted will show here</th>
+			<th>Time submitted will show here</th>
 		</table>
 	</div>
 

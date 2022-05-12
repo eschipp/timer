@@ -1,8 +1,8 @@
-// define vars to hold time values
+// define vars to hold time/date values
 let seconds = 0;
 let minutes = 0;
 let hours = 0;
-
+let date = new Date();
 
 // define vars to hold display values
 let displaySeconds= 0;
@@ -75,6 +75,8 @@ function startStop(){
 	}
 }
 
+
+
 function reset() {
 	let recordedTime = (hours*60 + minutes + seconds/60).toFixed(2);
 	function returnRecordedTime() {
@@ -82,11 +84,12 @@ function reset() {
 	}
 	if(recordedTime === 0) {
 		
-		document.getElementById("recordedTime").innerHTML = "0 minutes"
+		document.getElementById("tableTime").innerHTML = "0 minutes"
 	} else {
 		
-		document.getElementById("recordedTime").innerHTML = recordedTime + " minutes";
+		document.getElementById("tableTime").innerHTML = recordedTime + " minutes";
 	}
+	document.getElementById("tableDate").innerHTML = date.toDateString();
 
 	window.clearInterval(interval);
 	seconds = 0;
@@ -96,4 +99,3 @@ function reset() {
 	document.getElementById("startStopIcon").src = "icons/play.png";
 	status = "stopped";
 }
-

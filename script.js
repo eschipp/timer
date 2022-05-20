@@ -1,76 +1,27 @@
 // define vars to hold time/date values
-let seconds = 0;
-let minutes = 0;
-let hours = 0;
-let date = new Date();
-
-// define vars to hold display values
-let displaySeconds= 0;
-let displayMinutes = 0;
-let displayHours = 0;
-
-// define var to hold setInterval() function
-let interval = null;
+let startTime = 0;
+let endTime = 0;
+let today = new Date();
 
 // define var to hold stopwatch status
 let status = "stopped";
 
-// stopwatch function (logic to determine when to increment next value etc.)
-function timer() {
-	
-	seconds++;
 
-	// logic to determine when to increment next value
-	if(seconds / 60 === 1){
-		seconds = 0;
-		minutes++;
-
-		if(minutes / 60 === 1){
-			minutes = 0;
-			hours++;
-		}
-
-
-
-	}
-	// if sec/min/hours are onle one digit, add a leading 0 to value
-	if(seconds < 10){
-		displaySeconds = "0" + seconds.toString();
-	} else {
-		displaySeconds = seconds;
-	}
-
-	if(minutes < 10){
-		displayMinutes = "0" + minutes.toString();
-	} else {
-		displayMinutes = minutes;
-	}
-
-	if(hours < 10){
-		displayHours = "0" + hours.toString();
-	} else {
-		displayHours = hours;
-	}
-
-
-
-	// display updated time values to user
-	document.getElementById("display").innerHTML = displayHours + ":" + displayMinutes + ":" + displaySeconds;
-
-}
 
 
 
 function startStop(){
 
 	if(status === "stopped") {
-		//start stopwatch
-		interval = window.setInterval(timer, 1000);
-		document.getElementById("startStopIcon").src = "icons/pause.png"
+		//set start time
+		document.getElementById("startStop").innerHTML = "Stop"
+		startTime = document.getElementById("startTimeDisplay").innerHTML = new Date().getTime();
 		status = "started"
+
 	} else {
-		window.clearInterval(interval);
-		document.getElementById("startStopIcon").src = "icons/play.png"
+		//set end time
+		document.getElementById("startStop").innerHTML = "Start"
+		endTime = document.getElementById("stopTimeDisplay").innerHTML = new Date().getTime();
 		status = "stopped";
 	}
 }
@@ -78,7 +29,7 @@ function startStop(){
 
 
 function reset() {
-	let recordedTime = (hours*60 + minutes + seconds/60).toFixed(2);
+	let recordedTime = ((endTime - startTime)/60000).toFixed(2);
 	function returnRecordedTime() {
 		return recordedTime;
 	}
@@ -89,13 +40,10 @@ function reset() {
 		
 		document.getElementById("tableTime").innerHTML = recordedTime + " minutes";
 	}
-	document.getElementById("tableDate").innerHTML = date.toDateString();
+	document.getElementById("tableDate").innerHTML = today.toDateString();
+	;
 
-	window.clearInterval(interval);
-	seconds = 0;
-	minutes = 0;
-	hours = 0;
-	document.getElementById("display").innerHTML = "00:00:00";
-	document.getElementById("startStopIcon").src = "icons/play.png";
+	startTime = 0;
+	endTime = 0;
 	status = "stopped";
 }

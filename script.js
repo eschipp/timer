@@ -11,20 +11,35 @@ let status = "stopped";
 
 
 function startStop(){
-
+	let date = new  Date();
 	if(status === "stopped") {
 		//set start time
 		document.getElementById("startStop").innerHTML = "Stop"
-		startTime = document.getElementById("startTimeDisplay").innerHTML = new Date().getTime();
+		let startTimeObject = document.getElementById("startTimeDisplay").innerHTML = date.toLocaleString([], {
+			hour12: false,
+			hour: '2-digit',
+			minute: '2-digit',
+			second: '2-digit',
+		});
+		let startTime = startTimeObject["hour", "minute", "second"];
 		status = "started"
 
 	} else {
 		//set end time
 		document.getElementById("startStop").innerHTML = "Start"
-		endTime = document.getElementById("stopTimeDisplay").innerHTML = new Date().getTime();
+		let endTimeObject = document.getElementById("stopTimeDisplay").innerHTML = date.toLocaleString([], {
+			hour12: false,
+			hour: '2-digit',
+			minute: '2-digit',
+			second: '2-digit',
+		});
+		let endTime = endTimeObject["hour", "minute", "second"];
 		status = "stopped";
+		
 	}
+	
 }
+
 
 
 

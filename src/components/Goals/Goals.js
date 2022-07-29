@@ -3,17 +3,18 @@ import './Goals.css';
 
 const Goals = () => {
 	return (
-		<div class="goals">
-			<div class="circle">
-				<h1 class="goalTitle"> X/X Daily Streak! </h1>
+		<div className="goals">
+			<div className="circle">
+				<h1 className="goalTitle"> X/X Daily Streak! </h1>
 			</div>
-			<div class="circle">
-				<h1 class="goalTitle"> X Total Hours </h1>
+			<div className="circle">
+				<h1 className="goalTitle"> X Total Hours </h1>
 			</div>
-			<div class="circle">
-				<h1 class="goalTitle"> X/X Weekly Goal Streak! </h1>
+			<div className="circle">
+				<h1 className="goalTitle"> X/X Weekly Goal Streak! </h1>
 			</div>
-		</div>)
+		</div>
+	)
 }
 
 export default Goals;

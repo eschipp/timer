@@ -1,6 +1,10 @@
 body {
   margin: 0;
   font-family: 'Segoe UI';
+  background: linear-gradient(90deg, rgba(209,255,205,1) 0%, rgba(186,243,255,1) 100%);
+
+
+
 }
 
 button {

@@ -3,15 +3,19 @@ import './Time.css';
 
 const Time = () => {
 	return (
-		<div class="clockContainer">
-			<div class="timerButtons">
-				<button id = "startStop" onclick = "startStop()">
+		<div className="clockContainer">
+			<div className="timerButtons">
+				<button id = "startStop" 
+						// onClick = "startStop()"
+				>
 					Start
 				</button>
 				<div id="startTimeDisplay">00:00:00 </div>
 				
 				<div id="stopTimeDisplay">00:00:00</div>
-				<button id = "reset" onclick = "reset()">
+				<button id = "reset" 
+						// onClick = "reset()"
+				>
 					Reset
 				</button>
 			</div>

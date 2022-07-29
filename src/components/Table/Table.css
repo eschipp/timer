@@ -11,7 +11,7 @@ th {
 
 table, th, td {
 	border:  1px solid white;
-	border-collaps: collapse;
+	border-collapse: collapse;
 }
 
 th, td {

@@ -5,18 +5,21 @@ const Time = () => {
 	return (
 		<div className="clockContainer">
 			<div className="timerButtons">
-				<button id = "startStop" 
-						// onClick = "startStop()"
-				>
-					Start
-				</button>
-				<div id="startTimeDisplay">00:00:00 </div>
 				
+
+				<div className="label">Start Time: </div>
+				<div id="startTimeDisplay"> 00:00:00 </div>
+				
+				<div className="label"> End time: </div>
 				<div id="stopTimeDisplay">00:00:00</div>
-				<button id = "reset" 
-						// onClick = "reset()"
-				>
-					Reset
+				
+				<button id = "startStop">
+						{/*// onClick = "startStop()"*/}
+					Click to Start
+				</button>
+				<button id = "reset">
+						{/*// onClick = "reset()"*/}
+					Click to Reset
 				</button>
 			</div>
 			
